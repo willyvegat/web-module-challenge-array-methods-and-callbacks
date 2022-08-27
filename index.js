@@ -110,11 +110,15 @@ Use the higher order function `getAverageGoals` to do the following:
  
 */
 
-function getAverageGoals(/* code here */) {
-    /* code here */
+
+function getAverageGoals(array) {
+    const averageHomeGoals = array.reduce((acc, item) => {
+        return acc + item["Home Team Goals"] + item["Away Team Goals"]
+    }, 0)
+    return (averageHomeGoals/array.length).toFixed(2);
  }
 
-
+console.log("Task 6:", getAverageGoals(fifaData));
 
 
 /// 🥅 STRETCH 🥅 ///
